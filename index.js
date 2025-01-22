@@ -1,6 +1,5 @@
 // Build and deploy gen AI applications on Google Cloud with Genkit and Node.js
 // https://codelabs.developers.google.com/codelabs/deploy-from-github/genkit-nodejs#6
-// This code responds to http requests with our "Hello world!" greeting.
 
 
 //To handle HTTP requests
@@ -17,7 +16,7 @@ const ai = genkit({
 });
 
 app.get('/', async (req, res) => {
-    const animal = req.query.animal || 'dog';
+    const animal = req.query.animal || 'cat';
     const prompt = `Give me 10 fun facts about ${animal}. Return this as html without backticks.`
     const llmResponse = await ai.generate({
         model: gemini15Flash,
