@@ -1,7 +1,7 @@
 ---
 model: vertexai/gemini-1.5-flash
 config:
-    temperature: 0.9
+    temperature: 0.8
 input:
     schema:
         animal: string
