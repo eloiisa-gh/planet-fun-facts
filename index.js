@@ -13,14 +13,9 @@ const ai = genkit({
 });
 
 app.get('/', async (req, res) => {
-    const animal = req.query.animal || 'caterpillar';
-    const prompt = `Give me 10 fun facts about ${animal}. Return this as html without backticks.`
-    const llmResponse = await ai.generate({
-        //model: gemini20Flash,
-        model: vertexAI.model('gemini-2.0-flash'),
-        //prompt: prompt,
-        prompt: 'What should I do when I visit Melbourne?',
-    });
+    const animal = req.query.animal || 'cat';
+    const animalPrompt = ai.prompt('animal-facts');
+    const llmResponse = await animalPrompt({animal});
     const html = llmResponse.text;
     res.send(html);
 });
