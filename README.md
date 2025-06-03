@@ -1,6 +1,6 @@
 # Build and deploy gen AI applications on Google Cloud with Genkit and Node.js
 
-[Google Developers Codelabs - Automatically Deploy Generative AI Node.js Genkit Web Application from Version Control to Cloud Run](https://codelabs.developers.google.com/codelabs/deploy-from-github/genkit-nodejs)
+[Automatically Deploy Generative AI Node.js Genkit Web Application from Version Control to Cloud Run](https://codelabs.developers.google.com/codelabs/deploy-from-github/genkit-nodejs)
 
 In this lab, you configure [Cloud Run](https://cloud.google.com/run) to automatically deploy your web application when a change is made to its source code.
 
@@ -45,10 +45,15 @@ gcloud services enable \
   aiplatform.googleapis.com
 ```
 
-List the services for project my-project has enabled for consumption:
+List the services the project has enabled for consumption:
 ```
 gcloud services list --enabled --project=PROJECT_ID
 ```
+
+### Set up automatic deployments
+In the [Cloud Run page](https://console.cloud.google.com/run), click 'Connect repo' and Click 'Set up with Cloud Build'. 
+Step #1: 'Source repository'. In step #2: 'Build Configuration', select Build Type: 'Go, Node.js, Python, Java, .NET Core, Ruby or PHP via Google Cloud's buildpacks'. 
+In 'Authentication', select 'Allow unauthenticated invocations'. Click 'Create'
 
 To get the resulting URL to view the running application: 
 ```
