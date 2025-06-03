@@ -49,6 +49,7 @@ gcloud services enable \
 List the services the project has enabled for consumption:
 ```
 gcloud services list --enabled --project=PROJECT_ID
+gcloud services list --enabled --project=${GOOGLE_CLOUD_PROJECT}
 ```
 
 ### Set up automatic deployments
