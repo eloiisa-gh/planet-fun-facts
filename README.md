@@ -4,7 +4,7 @@
 
 In this lab, you configure [Cloud Run](https://cloud.google.com/run) to automatically deploy your web application when a change is made to its source code.
 
-This [website](https://codelab-genai-649048930651.us-central1.run.app) shows  10 fun facts about an animal. Eg: [flamingo](https://codelab-genai-649048930651.us-central1.run.app?animal=flamingo)
+This [website](https://codelab-genai-555189579138.europe-west1.run.app) shows  10 fun facts about an animal. Eg: [flamingo](https://codelab-genai-555189579138.europe-west1.run.app?animal=flamingo)
 
 
 <details>
