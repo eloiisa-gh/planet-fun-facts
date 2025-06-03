@@ -1,23 +1,8 @@
-//To handle HTTP requests
 import express from 'express';
+
 const app = express();
-
-import { genkit } from 'genkit';
-import { vertexAI } from '@genkit-ai/vertexai';
-
-
-const ai = genkit({
-    plugins: [
-        vertexAI({ location: 'us-central1' }),
-    ],
-});
-
 app.get('/', async (req, res) => {
-    const animal = req.query.animal || 'owl';
-    const animalPrompt = ai.prompt('animal-facts');
-    const llmResponse = await animalPrompt({animal});
-    const html = llmResponse.text;
-    res.send(html);
+    res.send('HelloWorld. mmmmm dbg!');
 });
 
 const port = process.env.PORT || 8080;
