@@ -2,7 +2,8 @@ import express from 'express';
 const app = express();
 
 import { genkit } from 'genkit';
-import { gemini15Flash, vertexAI } from '@genkit-ai/vertexai';
+//import { gemini15Flash, vertexAI } from '@genkit-ai/vertexai';
+import { vertexAI } from '@genkit-ai/vertexai';
 
 const ai = genkit({
     plugins: [
@@ -14,8 +15,10 @@ app.get('/', async (req, res) => {
     const animal = req.query.animal || 'camel';
     const prompt = `Give me 10 fun facts about ${animal}. Return this as html without backticks.`
     const llmResponse = await ai.generate({
-        model: gemini15Flash,
-        prompt: prompt,
+        //model: gemini15Flash,
+        model: vertexAI.model('gemini-2.0-flash'),
+        //prompt: prompt,
+        prompt: 'What should I do when I visit Melbourne?',
     });
     const html = llmResponse.text;
     res.send(html);
