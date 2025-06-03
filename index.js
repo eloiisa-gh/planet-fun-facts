@@ -2,8 +2,6 @@ import express from 'express';
 const app = express();
 
 import { genkit } from 'genkit';
-//import { gemini15Flash, vertexAI } from '@genkit-ai/vertexai';    //Internal Server Error
-//import { gemini20Flash, vertexAI } from '@genkit-ai/vertexai';
 import { vertexAI } from '@genkit-ai/vertexai';
 
 const ai = genkit({
