@@ -28,8 +28,7 @@
     "test": ""
   },
   "dependencies": {
-    "@genkit-ai/ai": "^0.9.12",
-    "@genkit-ai/vertexai": "^0.9.12",
-    "express": "^4.21.2"
+    "@genkit-ai/vertexai": "^1.11.1",
+    "express": "^5.1.0"
   }
 }
