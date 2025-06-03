@@ -13,7 +13,7 @@ const ai = genkit({
 });
 
 app.get('/', async (req, res) => {
-    const animal = req.query.animal || 'cat';
+    const animal = req.query.animal || 'owl';
     const animalPrompt = ai.prompt('animal-facts');
     const llmResponse = await animalPrompt({animal});
     const html = llmResponse.text;
