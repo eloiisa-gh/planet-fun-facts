@@ -4,6 +4,7 @@ const app = express();
 import { genkit } from 'genkit';
 import { vertexAI } from '@genkit-ai/vertexai';
 
+
 const ai = genkit({
     plugins: [
         vertexAI({ location: 'us-central1' }),
@@ -11,9 +12,9 @@ const ai = genkit({
 });
 
 app.get('/', async (req, res) => {
-    const animal = req.query.animal || 'cat';
-    const animalPrompt = ai.prompt('animal-facts');
-    const llmResponse = await animalPrompt({animal});
+    const planet = req.query.planet || 'Mars';
+    const planetPrompt = ai.prompt('planet-facts');
+    const llmResponse = await planetPrompt({planet});
     const html = llmResponse.text;
     res.send(html);
 });
