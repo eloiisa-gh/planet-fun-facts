@@ -1,41 +1,31 @@
-# Build and deploy gen AI applications on Google Cloud with Genkit and Node.js
+# Planet Fun Facts 🪐
 
-This [website](https://codelab-genai-555189579138.europe-west1.run.app) shows  10 fun facts about an animal. Eg: [flamingo](https://codelab-genai-555189579138.europe-west1.run.app?animal=flamingo)
+This [website](https://planet-fun-facts-496672542175.europe-west1.run.app/) shows 10 fun facts about a planet. 
+This parameter can also be provided in this way: `URL`/?planet=`PLANET_NAME`
+
+Eg: [Jupiter](https://planet-fun-facts-496672542175.europe-west1.run.app?planet=Jupiter). Try it with [other planets](https://science.nasa.gov/solar-system/planets/)
 
 
 <details>
   <summary>Instructions</summary>
 
-[Automatically Deploy Generative AI Node.js Genkit Web Application from Version Control to Cloud Run](https://codelabs.developers.google.com/codelabs/deploy-from-github/genkit-nodejs)
+Continuous Deployment: [Cloud Run](https://cloud.google.com/run) is configured to automatically deploy the web application when a change is made to its source code.
 
-In this lab, you configure [Cloud Run](https://cloud.google.com/run) to automatically deploy your web application when a change is made to its source code.
+Based on: [Automatically Deploy Generative AI Node.js Genkit Web Application from Version Control to Cloud Run](https://codelabs.developers.google.com/codelabs/deploy-from-github/genkit-nodejs)
 
 
-Google Cloud CLI: 
+<details open>
+  <summary>Project setup</summary>
+
+Check the active authenticated gcloud account: 
 ```
 gcloud auth list                                                     
 ```
 
-Create a Cloud project
-```
-gcloud projects create PROJECT_ID
-gcloud projects list
-```
-
-### Enable billing for your Cloud project
-List available billing accounts: 
-```
-gcloud billing accounts list
-```
-
-Link a billing account with a Google Cloud project: 
-```
-gcloud billing projects link PROJECT_ID --billing-account=BILLING_ACCOUNT_ID
-```
-
-### Set your project
+Set your project: 
 ```
 gcloud config set project PROJECT_ID
+gcloud config get-value project
 ```
 
 Enable APIs:
@@ -51,14 +41,20 @@ List the services the project has enabled for consumption:
 gcloud services list --enabled --project=PROJECT_ID
 gcloud services list --enabled --project=${GOOGLE_CLOUD_PROJECT}
 ```
+</details>
+
 
 ### Set up automatic deployments
-In the [Cloud Run page](https://console.cloud.google.com/run), click 'Connect repo' and Click 'Set up with Cloud Build'. 
+To build and deploy this gen AI application on Google Cloud with Genkit and Node.js: 
 
-Step #1: 'Source repository'. 
-In step #2: 'Build Configuration', select Build Type: 'Go, Node.js, Python, Java, .NET Core, Ruby or PHP via Google Cloud's buildpacks'. 
+In the [Cloud Run page](https://console.cloud.google.com/run), click 'Connect repo' and 'Set up with Cloud Build'. 
 
-In 'Authentication', select 'Allow unauthenticated invocations'. 
+Step #1: Select the 'Source repository'. 
+Step #2: 'Build Configuration' -> 'Build Type': `Go, Node.js, Python, Java, .NET Core, Ruby or PHP via Google Cloud's buildpacks`. 
+
+In the 'Configure' section, set the 'Service name' eg: `planet-fun-facts`, and 'Region'. 
+In 'Authentication', select `Allow unauthenticated invocations`. 
+
 Click 'Create'.
 
 
@@ -66,4 +62,7 @@ To get the resulting URL to view the running application:
 ```
 gcloud run services list
 ```
+https://planet-fun-facts-496672542175.europe-west1.run.app/
+
+
 </details>
