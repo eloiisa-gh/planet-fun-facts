@@ -1,9 +1,12 @@
 # Planet Fun Facts 🪐
 
 This [website](https://planet-fun-facts-496672542175.europe-west1.run.app/) shows 10 fun facts about a planet. 
+
 This parameter can also be provided in this way: `URL`/?planet=`PLANET_NAME`
 
 Eg: [Jupiter](https://planet-fun-facts-496672542175.europe-west1.run.app?planet=Jupiter). Try it with [other planets](https://science.nasa.gov/solar-system/planets/)
+
+Model used: `gemini-2.5-flash`
 
 
 <details>
