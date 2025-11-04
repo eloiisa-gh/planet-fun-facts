@@ -12,7 +12,7 @@ const ai = genkit({
 });
 
 app.get('/', async (req, res) => {
-    const planet = req.query.planet || 'Mars';
+    const planet = req.query.planet || 'Ceres';
     const planetPrompt = ai.prompt('planet-facts');
     const llmResponse = await planetPrompt({planet});
     const html = llmResponse.text;
