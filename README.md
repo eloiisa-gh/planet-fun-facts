@@ -65,7 +65,7 @@ To get the resulting URL to view the running application:
 ```
 gcloud run services list
 ```
-https://planet-fun-facts-496672542175.europe-west1.run.app/
-
 
 </details>
+
+https://planet-fun-facts-496672542175.europe-west1.run.app/
