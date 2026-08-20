@@ -1,4 +1,4 @@
-# Planet Fun Facts 🪐
+# Planet fun Facts 🪐
 
 This [website](https://planet-fun-facts-496672542175.europe-west1.run.app/) shows 10 fun facts about a planet. 
 
